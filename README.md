@@ -15,6 +15,6 @@ git clone https://github.com/aveetron/Django-create-project-automation.git
 
 cd Django-create-project-automation
 chmod + command.sh
-/command.sh
+./command.sh
 
 ``` 
