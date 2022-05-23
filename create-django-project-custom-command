@@ -1,3 +1,13 @@
+# installation guide
+# 1. open terminal
+# 2. sudo -i
+# 3. provide your password
+# 4. cd /usr/bin
+# 5. nano you_custom_command_name
+# 6. copy the following code and paste
+# 7. make the file accessible - chmod +x your_custom_command_name
+
+
 echo "Welcome to django project automation"
 # enter project name
 read -p "Enter project name :" project_name
