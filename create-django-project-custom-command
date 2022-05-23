@@ -1,0 +1,39 @@
+echo "Welcome to django project automation"
+# enter project name
+read -p "Enter project name :" project_name
+# change directory and go to home
+cd
+# go to Documents directory
+cd Documents
+# make folder according to project name
+mkdir $project_name
+# go to project folder
+cd $project_name
+# create a virtual env there
+python3 -m venv env
+# activate the enviornment
+source env/bin/activate
+# install django
+pip install django
+# project init
+django-admin startproject mainapp .
+# makemigrations and migrate and run
+python manage.py makemigrations
+python manage.py migrate
+
+# will keep asking you about yes or no, if yes then create app & if no then runserver
+while true
+do
+    read -p "Do you want to create an app?(yes/no)" create_app_answer
+    if [[ "$create_app_answer" == "yes" ]]; then
+       read -p "Enter your app name:" app_name
+       python manage.py startapp $app_name
+       echo "now add $app_name to mainapp settings.py file installed app list"
+     fi
+     
+     if [[ "$create_app_answer" == "no" ]]; then
+	break
+     fi
+done
+
+python manage.py runserver
